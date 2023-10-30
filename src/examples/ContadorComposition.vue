@@ -15,4 +15,3 @@ onMounted(() =>{
     <h1>Contador: {{ count }}</h1>
     <button @click="increase">Incrementar</button>
 </template>
-
