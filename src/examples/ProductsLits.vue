@@ -1,22 +1,54 @@
 <script lang="ts">
+import ProductCard from './ProductCard.vue';
+import Cart from './Cart.vue';
+import type { CartDetail, Product } from './Types';
 export default {
+    components: {
+        ProductCard,
+        Cart
+    },
     data(){
         return {
-            products: [
-                {name: 'Silla', price: 56},
-                {name: 'Monitor', price: 450},
-                {name: 'Micrófono', price: 120},
-            ]
+            // Casting
+            products: <Array<Product>> [
+                {name: 'Silla', price: 56, id:3},
+                {name: 'Monitor', price: 450, id:7},
+                {name: 'Micrófono', price: 120, id:1},
+                {name: 'KeyBoard', price: 200, id:6},
+            ],
+            details: <Array<CartDetail>>[]
         }
     },
-    methods: {},
+    methods: {
+        onAddProduct(productId: number) {
+            const detailFound = this.details.find(d => d.productId === productId);
+            if(detailFound){
+                detailFound.quantity += 1;
+            }else{
+                this.details.push({
+                    productId,
+                    quantity: 1
+                });
+
+            }
+        }
+    },
     
 }
 </script>
 
 <template>
-    <ul>
-        <li v-for="product in products">{{ product.name }}</li>
-    </ul>
+    <v-container>
+        <v-row>
+            <v-col v-for="product in products" cols="3">
+                <ProductCard 
+                    :product="product" 
+                    @addProduct="onAddProduct(product.id)"
+                />
+            </v-col>
+        </v-row>
+        
+        <Cart :details="details"/>
+    </v-container>
 </template>
 
