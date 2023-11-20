@@ -1,12 +1,12 @@
 import { createApp } from 'vue'
-// import Contador from './examples/ContadorComposition.vue';
-// import Contador from './examples/ContadorOptions.vue';
-import ProductsList from './examples/ProductsLits.vue';
+import App from './App.vue';
+import router from './router';
 
+// Vuetify
 import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
-import * as components from 'vuetify/components'
-import * as directives from 'vuetify/directives'
+import * as components from 'vuetify/components';
+import * as directives from 'vuetify/directives';
 
 const vuetify = createVuetify({
   components,
@@ -16,6 +16,7 @@ const vuetify = createVuetify({
   }
 });
 
-const app = createApp(ProductsList)
+const app = createApp(App);
 app.use(vuetify);
+app.use(router);
 app.mount('#app')

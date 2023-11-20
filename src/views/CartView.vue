@@ -4,6 +4,6 @@
 
 <template>
   <main>
-    Heme View
+    Cart View
   </main>
 </template>
