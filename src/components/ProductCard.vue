@@ -1,6 +1,7 @@
 <script lang="ts">
 import type { PropType } from 'vue';
 import type { Product } from '@/model/Types';
+import { useCartStore } from '@/stores/cart';
 
 
 export default {
@@ -13,10 +14,10 @@ export default {
             required: true
         }
     },
-    emits: ['addProduct'],
     methods: {
         onAddButtonClick() {
-            this.$emit('addProduct')
+            const cartStore = useCartStore();
+            cartStore.AddProduct(this.product.id);
         }
     }, 
 }

@@ -1,18 +1,28 @@
 <script lang="ts">
 import type { PropType } from 'vue';
 import type { CartDetail } from '@/model/Types';
+import { useCartStore } from '@/stores/cart';
+
 export default{
-    props: {
-       details: {
-        type: Object as PropType<Array<CartDetail>>,
-        required: true
-       }
+    // Antes se recibía por Props
+    // props: {
+    //     details: {
+    //         type: Object as PropType<Array<CartDetail>>,
+    //         required: true
+    //    }
+    // }
+
+    // A hora con Pinia se recibe por estado
+    computed: {
+        details() {
+            const cartStore = useCartStore();
+            return cartStore.details;
+        }
     }
 }
 </script>
 
 <template>
-
     <v-card class="mt-4">
         <v-card-title>
             Products Added to cart:
