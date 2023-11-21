@@ -1,9 +1,9 @@
 <script setup lang="ts">
-
+import ProductsLists from '@/components/ProductsLists.vue';
 </script>
 
 <template>
   <main>
-    Heme View
+    <ProductsLists />
   </main>
 </template>
