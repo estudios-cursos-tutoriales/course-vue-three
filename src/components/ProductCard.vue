@@ -17,7 +17,7 @@ export default {
     methods: {
         onAddButtonClick() {
             const cartStore = useCartStore();
-            cartStore.AddProduct(this.product.id);
+            cartStore.addProduct(this.product.id);
         }
     }, 
 }

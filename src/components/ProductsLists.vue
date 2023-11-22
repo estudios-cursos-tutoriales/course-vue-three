@@ -15,6 +15,10 @@ export default {
                 {name: 'Monitor', price: 450, id:7},
                 {name: 'Micrófono', price: 120, id:1},
                 {name: 'KeyBoard', price: 200, id:6},
+                {name: 'Silla', price: 56, id:5},
+                {name: 'Monitor', price: 450, id:8},
+                {name: 'Micrófono', price: 120, id:9},
+                {name: 'KeyBoard', price: 200, id:10},
             ],
             details: <Array<CartDetail>>[]
         }
@@ -34,9 +38,6 @@ export default {
                 @addProduct="onAddProduct(product.id)"
             />
         </v-col>
-    </v-row>
-    
-    <Cart :details="details"/>
-    
+    </v-row>    
 </template>
 

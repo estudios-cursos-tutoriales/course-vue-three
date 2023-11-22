@@ -33,7 +33,6 @@ export default{
                     <v-list-title>
                         Product: {{ detail.productId }} 
                         (Qty: {{ detail.quantity }})
-
                     </v-list-title>
                 </v-list-item>
             </v-list>
