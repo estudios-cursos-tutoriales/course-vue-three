@@ -1,12 +1,21 @@
 <script lang="ts">
-import Cart from '@/components/ShoppingCart.vue';
+import ShoppingCart from '@/components/cart/ShoppingCart.vue';
+import SummaryCart from '@/components/cart/SummaryCard.vue';
 export default {
     components: {
-        Cart
+        ShoppingCart,
+        SummaryCart
     }
 }
 </script>
 
 <template>
-    <Cart />
+    <v-row>
+        <v-col cols="8">
+            <ShoppingCart />
+        </v-col>
+        <v-col cols="4">
+            <SummaryCart />
+        </v-col>
+    </v-row>
 </template>
