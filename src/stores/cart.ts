@@ -25,6 +25,29 @@ export const useCartStore = defineStore('cart', {
                     quantity: 1
                 });
             }
+        },
+        deleteProducts(productId: number){
+            const index = this.details.findIndex(d => d.productId === productId);
+            this.details.splice(index, 1)
+
+        },
+        increment(productId: number){
+            const detailFound = this.details.find(d => d.productId === productId);
+            if(detailFound){
+                detailFound.quantity += 1;
+            }
+        },
+        decrement(productId: number){
+            const detailFound = this.details.find(d => d.productId === productId);
+            if(detailFound){
+                detailFound.quantity -= 1;
+                
+                //* Validación para eliminar producto si llega a 0
+                if(detailFound.quantity === 0){
+                    this.deleteProducts(productId);
+                }
+            }
+
         }
     },
 })

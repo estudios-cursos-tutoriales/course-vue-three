@@ -4,6 +4,7 @@ import TopBar from './components/TopBar.vue';
 export default {
     components: {
         TopBar,
+        RouterView
     }
 }
 </script>

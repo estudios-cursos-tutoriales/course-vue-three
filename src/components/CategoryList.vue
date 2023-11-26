@@ -4,7 +4,20 @@ import type { Category } from '@/model/Types';
 export default {
     data() {
         return {
-            categories: <Array<Category>>[
+            
+            // Casting
+            // categories: <Array<Category>>[
+            //     {
+            //         id: 1,
+            //         name: 'Technology'
+            //     },
+            //     {
+            //         id: 2,
+            //         name: 'Toys'
+            //     }
+            // ]
+            //? Refactoring
+            categories: [
                 {
                     id: 1,
                     name: 'Technology'
@@ -13,8 +26,8 @@ export default {
                     id: 2,
                     name: 'Toys'
                 }
-            ]
-        }
+            ] as Category[]
+        };
     }
 }
 </script>
