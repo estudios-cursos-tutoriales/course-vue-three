@@ -20,11 +20,18 @@ export default {
             categories: [
                 {
                     id: 1,
-                    name: 'Technology'
+                    name: 'Office',
+                    description: 'Products for the office'
                 },
                 {
                     id: 2,
-                    name: 'Toys'
+                    name: 'Computers',
+                    description: 'Accessories for computers'
+                },
+                {
+                    id: 3,
+                    name: 'Tech',
+                    description: 'Technology accessories'
                 }
             ] as Category[]
         };
