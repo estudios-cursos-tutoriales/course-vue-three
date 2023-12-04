@@ -5,9 +5,16 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/',
-      name: 'home',
-      component: HomeView
+        path: '/',
+        name: 'home',
+        component: () => import('../views/HomeView.vue')
+    },
+    //* Ruta para filtra la categorías
+    {
+        //* esto : se conoce como parámetro de ruta ya que 
+        path: '/categories/:categoryId',
+        name: 'category',
+        component: () => import('../views/HomeView.vue')
     },
     {
       path: '/cart',

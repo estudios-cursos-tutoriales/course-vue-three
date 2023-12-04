@@ -35,6 +35,18 @@ export default {
                 }
             ] as Category[]
         };
+    },
+    methods: {
+        selectCategory(categoryId: number) {
+            this.$router.push({
+                name: 'category',
+                
+                // params: {categoryId: categoryId}
+
+                // * Forma simplificada
+                params: {categoryId}
+            })
+        }
     }
 }
 </script>
@@ -46,7 +58,11 @@ export default {
                 v-for="category in categories"
                 :key="category.id"
                 link
-                :title="`${category.name}`">
+                @click="selectCategory(category.id)"
+                >
+                <v-list-item-title>
+                    {{ category.name }}
+                </v-list-item-title>
             </v-list-item>
 
             <v-divider class="my-2"></v-divider>
